@@ -1,4 +1,4 @@
-
+import java.util.Random;
 import java.util.Scanner;
 class Conversation implements ConversationRequirements {
 
@@ -16,8 +16,12 @@ class Conversation implements ConversationRequirements {
    * Starts and runs the conversation with the user
    */
   public void chat() {
+    String[] prewrittenResponses = {"That sounds interesting.", "Tell me more.", "Mhmm.", "Great weather we're having!", "Indeed.", "Hmmm."};
+    int responseNumber = prewrittenResponses.length;
+
     int rounds = 0;
-    
+    Random rand = new Random(); //Creates new Random object that we can use to choose random elements
+
     Scanner input = new Scanner(System.in);   //Creates new Scanner object for the user to choose the number of rpunds
 
     System.out.println("How many rounds?");   //Asks the user how many rounds the program will run
@@ -30,10 +34,12 @@ class Conversation implements ConversationRequirements {
 
     for (int i = 0; i < rounds; i++) {
         String userResponse = dialogue.nextLine();
-        System.out.println("You said " + userResponse + "?");
+        String l = prewrittenResponses[rand.nextInt(responseNumber)];
+          System.out.println(l);
     }
 
     System.out.println("See ya!");
+    
   }
 
   /**
@@ -48,8 +54,8 @@ class Conversation implements ConversationRequirements {
    * @param inputString the users last line of input
    * @return mirrored or canned response to user input  
    */
-  public String respond(String inputString) {
-    String returnString = ""; 
+  public String respond(String inputString) {     //I don't understand how this is different form the chat method and if it is how we incorporate the two
+    String returnString = "";     
     return returnString; 
   }
 
