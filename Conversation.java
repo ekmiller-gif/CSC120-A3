@@ -109,8 +109,6 @@ class Conversation implements ConversationRequirements {
 
   
   
-  
-  
   public static void main(String[] arguments) {
 
     Conversation myConversation = new Conversation();
